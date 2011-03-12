@@ -9,6 +9,7 @@ $results = $Db->get('posts');
 
 
 
+
 ?>
 <!DOCTYPE html>
 
@@ -19,7 +20,7 @@ $results = $Db->get('posts');
 </head>
 <body>
 <pre>
-<?php print_r($results); ?>
+
 </pre>
 </body>
 </html>
