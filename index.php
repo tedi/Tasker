@@ -1,5 +1,6 @@
 <?php
 include "header.php"; 
 ?>
-Main dashboard page here
+<div id="dashboard">Main dashboard page here</div>
+
 <?php include "footer.php"; ?>

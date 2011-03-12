@@ -9,13 +9,10 @@
 /**Variables**/
 $blueprint_grid_columns: 24;
 $blueprint_grid_width: 30px;
-$menu_border_color: #ddd;
-$green: #92c848;
-$green_hover: #5c8327;
-$green_border: #253410;
-$button-blue: #003768;
-$darker-red: #922315;
 $border_radius: 5px;
+$logo: url(../images/logo.png) no-repeat;
+$green: #4F9906;
+$color: #fffde0;
 
 $noisebg: url(../images/bluenoise.png) repeat-x transparent;
 $gradientbg:  url(../images/gradientbg.png) repeat-x transparent;
@@ -26,7 +23,7 @@ $bodycolor: #DBE2ED;
 $footer: #6F86A4;
 $blue: #0e6cb6;
 $contact_font_color: #666;
-$background_img:$gradientbg;
+$background_img: url(../images/bg.jpg);
 
 /******Mixins*********/
 @mixin speakbubble($background: $button-blue, $pointer: 14px) {
@@ -49,10 +46,70 @@ $background_img:$gradientbg;
 
 body{
 	//background: #e7f4fd;
-	background: $background_img;
-	background-color: $bodycolor;
+	background: $green;
+	
 	font-family: Helvetica,Arial,sans-serif;
 }
 
+#bodywrap {
 
-
+@include container;
+#header {
+	
+	margin-top: 20px;
+	h1#apptitle{
+	@include column(12);
+	background: $logo;
+	width: 300px;
+	height: 55px;
+	span {
+		display: none;
+		}
+	} //and apptitle
+	.session {
+		@include column(12, true);
+		@include float(right);
+		text-align: right;
+		font-size: 80%;
+		color: $color;
+		a{
+			text-decoration: none;
+			color: #fff125;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	} //end .session
+	#navigation {
+	@include column(12, true);
+	@include horizontal-list;
+	@include float(right);
+	display: block;
+	margin-top: 20px;
+	float: right;
+	font-weight: bold;
+	li {
+	a {
+		text-decoration: none;
+		color: $color;
+		padding: 10px;
+		display: block;
+		&:hover {
+			background-color: $color;
+			color: $green;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+		}
+	}
+	}//end li
+	} //end navigation
+} //end header
+#body{
+border-top: dashed 4px $color;
+@include column(24, true);
+margin-top: 15px;
+#dashboard {
+margin-top: 30px;
+}
+}
+} //end bodywrap

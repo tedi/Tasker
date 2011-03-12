@@ -83,9 +83,136 @@ a img {
 
 /**Variables**/
 /******Mixins*********/
-/* line 50, ../src/style.scss */
+/* line 47, ../src/style.scss */
 body {
-  background: url(../images/gradientbg.png) repeat-x transparent;
-  background-color: #dbe2ed;
+  background: #4f9906;
   font-family: Helvetica,Arial,sans-serif;
+}
+
+/* line 54, ../src/style.scss */
+#bodywrap {
+  width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 57, ../src/style.scss */
+#bodywrap #header {
+  margin-top: 20px;
+}
+/* line 60, ../src/style.scss */
+#bodywrap #header h1#apptitle {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 470px;
+  background: url(../images/logo.png) no-repeat;
+  width: 300px;
+  height: 55px;
+}
+/* line 138, ../../../../../../Users/Tedi/.rvm/gems/ruby-1.9.2-p0@rails3tutorial/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #bodywrap #header h1#apptitle {
+  overflow-x: hidden;
+}
+/* line 65, ../src/style.scss */
+#bodywrap #header h1#apptitle span {
+  display: none;
+}
+/* line 69, ../src/style.scss */
+#bodywrap #header .session {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 470px;
+  display: inline;
+  float: right;
+  text-align: right;
+  font-size: 80%;
+  color: #fffde0;
+}
+/* line 138, ../../../../../../Users/Tedi/.rvm/gems/ruby-1.9.2-p0@rails3tutorial/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #bodywrap #header .session {
+  overflow-x: hidden;
+}
+/* line 75, ../src/style.scss */
+#bodywrap #header .session a {
+  text-decoration: none;
+  color: #fff125;
+}
+/* line 78, ../src/style.scss */
+#bodywrap #header .session a:hover {
+  text-decoration: underline;
+}
+/* line 83, ../src/style.scss */
+#bodywrap #header #navigation {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 470px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  overflow: hidden;
+  *zoom: 1;
+  display: inline;
+  float: right;
+  display: block;
+  margin-top: 20px;
+  float: right;
+  font-weight: bold;
+}
+/* line 138, ../../../../../../Users/Tedi/.rvm/gems/ruby-1.9.2-p0@rails3tutorial/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #bodywrap #header #navigation {
+  overflow-x: hidden;
+}
+/* line 56, ../../../../../../Users/Tedi/.rvm/gems/ruby-1.9.2-p0@rails3tutorial/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+#bodywrap #header #navigation li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 45, ../../../../../../Users/Tedi/.rvm/gems/ruby-1.9.2-p0@rails3tutorial/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+#bodywrap #header #navigation li:first-child, #bodywrap #header #navigation li.first {
+  padding-left: 0;
+}
+/* line 46, ../../../../../../Users/Tedi/.rvm/gems/ruby-1.9.2-p0@rails3tutorial/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+#bodywrap #header #navigation li:last-child, #bodywrap #header #navigation li.last {
+  padding-right: 0;
+}
+/* line 92, ../src/style.scss */
+#bodywrap #header #navigation li a {
+  text-decoration: none;
+  color: #fffde0;
+  padding: 10px;
+  display: block;
+}
+/* line 97, ../src/style.scss */
+#bodywrap #header #navigation li a:hover {
+  background-color: #fffde0;
+  color: #4f9906;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+/* line 107, ../src/style.scss */
+#bodywrap #body {
+  border-top: dashed 4px #fffde0;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 950px;
+  margin-top: 15px;
+}
+/* line 138, ../../../../../../Users/Tedi/.rvm/gems/ruby-1.9.2-p0@rails3tutorial/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #bodywrap #body {
+  overflow-x: hidden;
+}
+/* line 111, ../src/style.scss */
+#bodywrap #body #dashboard {
+  margin-top: 30px;
 }
