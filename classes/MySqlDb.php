@@ -17,7 +17,15 @@ class MysqlDB {
     * @param int $numRows The number of rows total to return.
     * @return array Contains the returned rows from the query.
     */
-   public function query($query) 
+
+   //public function get_all_projects ()
+    //{
+        //$tableName = 'projects';
+      //  $all_projects = $this->get('projects');
+        //return $all_projects;
+    //}
+
+   public function query($query)
    {
       $this->_query = filter_var($query, FILTER_SANITIZE_STRING);
 
@@ -284,4 +292,3 @@ class MysqlDB {
    }
 
 }
-

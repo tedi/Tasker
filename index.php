@@ -1,7 +1,7 @@
 <?php
 
-require_once('MySqlDb.php');
-$Db = new MySqlDb('localhost', 'root', 'root', 'db');
+require_once('/classes/MySqlDb.php');
+$Db = new MySqlDb('localhost', 'bree', 'password', 'taskerdb');
 
 
 
