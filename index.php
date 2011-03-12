@@ -6,6 +6,7 @@ $Db = new MySqlDb('localhost', 'root', 'root', 'db');
 
 
 
+
 ?>
 <!DOCTYPE html>
 
@@ -16,7 +17,7 @@ $Db = new MySqlDb('localhost', 'root', 'root', 'db');
 </head>
 <body>
 <pre>
-<?php print_r($results); ?>
+
 </pre>
 </body>
 </html>
