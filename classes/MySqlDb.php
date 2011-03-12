@@ -9,11 +9,11 @@ class MysqlDB {
 
    public function __construct() {
 
-       include('config.php');
-       $host = $config['host'] ;
-       $username = $config['username'];
-       $password = $config['password'];
-       $db = $config['database'];
+       include('details.php');
+       $host = $detail['host'] ;
+       $username = $detail['username'];
+       $password = $detail['password'];
+       $db = $detail['database'];
 
       $this->_mysql = new mysqli($host, $username, $password, $db) or die('There was a problem connecting to the database');
 

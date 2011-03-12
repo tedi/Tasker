@@ -3,8 +3,16 @@
 require_once('classes/MySqlDb.php');
 require_once('classes/tasks.php');
 
-$results=$insertData->get('tasks');
+$project = new MysqlDB();
 
+//$results=$arc_task->get($insertdata);
+//$insertData = array(
+//    'task_name' => 'task one',
+//    'project_id' => '3'
+//);
+
+$arc_task = $project->archived_tasks('tasks');
+print_r($arc_task);
 ?>
 
 
@@ -16,7 +24,7 @@ $results=$insertData->get('tasks');
 </head>
 <body>
 <pre>
-<?php echo $results; ?>
+<?php  ; ?>
 </pre>
 </body>
-</html>
+</html>;
