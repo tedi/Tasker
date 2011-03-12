@@ -7,8 +7,16 @@ class MysqlDB {
    protected $_query;
    protected $_paramTypeList;
 
-   public function __construct($host, $username, $password, $db) {
+   public function __construct() {
+
+       include('details.php');
+       $host = $detail['host'] ;
+       $username = $detail['username'];
+       $password = $detail['password'];
+       $db = $detail['database'];
+
       $this->_mysql = new mysqli($host, $username, $password, $db) or die('There was a problem connecting to the database');
+
    }
 
    /**

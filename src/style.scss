@@ -83,12 +83,11 @@ body{
 	#navigation {
 	@include column(12, true);
 	@include horizontal-list;
-	@include float(right);
-	display: block;
 	margin-top: 20px;
-	float: right;
+	@include float(right);
 	font-weight: bold;
 	li {
+	@include float(right);
 	a {
 		text-decoration: none;
 		color: $color;
@@ -105,11 +104,20 @@ body{
 	} //end navigation
 } //end header
 #body{
+color: $color;
 border-top: dashed 4px $color;
 @include column(24, true);
 margin-top: 15px;
 #dashboard {
 margin-top: 30px;
 }
+}//end body
+#footer{
+	margin-top: 40px;
+	border-top: dashed 4px $color;
+	p.site_info {
+		margin-top: 30px;
+		
+	}
 }
 } //end bodywrap

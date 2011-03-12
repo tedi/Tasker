@@ -155,10 +155,8 @@ body {
   outline: 0;
   overflow: hidden;
   *zoom: 1;
-  display: inline;
-  float: right;
-  display: block;
   margin-top: 20px;
+  display: inline;
   float: right;
   font-weight: bold;
 }
@@ -185,22 +183,28 @@ body {
 #bodywrap #header #navigation li:last-child, #bodywrap #header #navigation li.last {
   padding-right: 0;
 }
-/* line 92, ../src/style.scss */
+/* line 89, ../src/style.scss */
+#bodywrap #header #navigation li {
+  display: inline;
+  float: right;
+}
+/* line 91, ../src/style.scss */
 #bodywrap #header #navigation li a {
   text-decoration: none;
   color: #fffde0;
   padding: 10px;
   display: block;
 }
-/* line 97, ../src/style.scss */
+/* line 96, ../src/style.scss */
 #bodywrap #header #navigation li a:hover {
   background-color: #fffde0;
   color: #4f9906;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
-/* line 107, ../src/style.scss */
+/* line 106, ../src/style.scss */
 #bodywrap #body {
+  color: #fffde0;
   border-top: dashed 4px #fffde0;
   display: inline;
   float: left;
@@ -214,5 +218,14 @@ body {
 }
 /* line 111, ../src/style.scss */
 #bodywrap #body #dashboard {
+  margin-top: 30px;
+}
+/* line 115, ../src/style.scss */
+#bodywrap #footer {
+  margin-top: 40px;
+  border-top: dashed 4px #fffde0;
+}
+/* line 118, ../src/style.scss */
+#bodywrap #footer p.site_info {
   margin-top: 30px;
 }
