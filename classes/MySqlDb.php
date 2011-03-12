@@ -1,11 +1,12 @@
 <?php
 
-class MysqlDB {
+class MySqlDB {
 
    protected $_mysql;
    protected $_where = array();
    protected $_query;
    protected $_paramTypeList;
+
 
    public function __construct($host, $username, $password, $db) {
       $this->_mysql = new mysqli($host, $username, $password, $db) or die('There was a problem connecting to the database');

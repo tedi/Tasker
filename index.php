@@ -1,13 +1,11 @@
 <?php
 
 require_once('classes/MySqlDb.php');
-//$Db = new MySqlDb('localhost', 'tcass84', '985300', 'taskerdb');
-
 require_once('classes/Admin.php');
 
-$status = new Admin('localhost', 'tcass84', '985300', 'taskerdb');
+$status = new Admin();
 
-$status_result = $status->get_status(3);
+$status->update_status(7, 'Test');
 
 
 
@@ -20,6 +18,7 @@ $status_result = $status->get_status(3);
    <title>untitled</title>
 </head>
 <body>
-    <?php print_r($status_result) ?>
+
+
 </body>
 </html>
