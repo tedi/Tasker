@@ -5,7 +5,7 @@ require_once('classes/Admin.php');
 
 $status = new Admin();
 
-$status->update_status(7, 'Test');
+$status->delete_status(7);
 
 
 

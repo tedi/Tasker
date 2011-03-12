@@ -44,9 +44,31 @@ class Admin extends MySqlDB {
   }
 
   public function delete_status($whereValue){
+      $projects = parent::get('projects');
+      $tasks = parent::get('tasks');
+
+      foreach($projects as $project){
+          if(!empty($project['project_status']) && $project['project_status'] == $whereValue){
+              $updateStatus = array(
+                'project_status' => 'NULL'
+              );
+              parent::where($project['project_status'], $whereValue);
+              parent::update('projects', $updateStatus);
+          }
+      }
+
+      foreach($tasks as $task){
+          if(!empty($task['task_status']) && $task['task_status'] == $whereValue){
+              $updateStatus = array(
+                'task_status' => 'NULL'
+              );
+              parent::where($task['task_status'], $whereValue);
+              parent::update('tasks', $updateStatus);
+          }
+      }
+
       parent::where('status_id', $whereValue);
-      $status = parent::delete('status');
-      return $status;
+      parent::delete('status');
   }
 
   public function update_status($statusID, $insertData){
