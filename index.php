@@ -1,12 +1,13 @@
 <?php
 
-require_once('MySqlDb.php');
-$Db = new MySqlDb('localhost', 'tcass84', '985300', 'oop-sql');
+require_once('classes/MySqlDb.php');
+//$Db = new MySqlDb('localhost', 'tcass84', '985300', 'taskerdb');
 
-//$Db->where('id', 6);
-$results = $Db->get('posts');
+require_once('classes/Admin.php');
 
+$status = new Admin('localhost', 'tcass84', '985300', 'taskerdb');
 
+$status_result = $status->get_status(3);
 
 
 
@@ -19,8 +20,6 @@ $results = $Db->get('posts');
    <title>untitled</title>
 </head>
 <body>
-<pre>
-
-</pre>
+    <?php print_r($status_result) ?>
 </body>
 </html>
