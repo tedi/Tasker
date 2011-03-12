@@ -1,0 +1,58 @@
+@import "blueprint/reset";
+@import "blueprint";
+@import "compass/utilities/lists/horizontal-list";
+@import "blueprint/buttons";
+@import "blueprint/typography";
+@import "compass/css3";
+@import "compass/layout/sticky-footer";
+
+/**Variables**/
+$blueprint_grid_columns: 24;
+$blueprint_grid_width: 30px;
+$menu_border_color: #ddd;
+$green: #92c848;
+$green_hover: #5c8327;
+$green_border: #253410;
+$button-blue: #003768;
+$darker-red: #922315;
+$border_radius: 5px;
+
+$noisebg: url(../images/bluenoise.png) repeat-x transparent;
+$gradientbg:  url(../images/gradientbg.png) repeat-x transparent;
+
+$topblue: #0e6cb6;
+$bodybox: #ECECEC;
+$bodycolor: #DBE2ED;
+$footer: #6F86A4;
+$blue: #0e6cb6;
+$contact_font_color: #666;
+$background_img:$gradientbg;
+
+/******Mixins*********/
+@mixin speakbubble($background: $button-blue, $pointer: 14px) {
+  background-color: $background;
+  color: #fff;
+  position: relative;
+  //border-bottom: 14px solid #eee;
+  padding: 10px;
+  @include border-radius ($border_radius);
+  &:before {
+   		content: '';
+  		border-left: $pointer solid $background;
+  		border-bottom: $pointer solid #eee;
+  		position: absolute;
+  		bottom: ($pointer * -1);
+  		left: 15px;
+	}
+}
+
+
+body{
+	//background: #e7f4fd;
+	background: $background_img;
+	background-color: $bodycolor;
+	font-family: Helvetica,Arial,sans-serif;
+}
+
+
+

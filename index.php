@@ -1,11 +1,7 @@
 <?php
 
-require_once('MySqlDb.php');
+require_once('classes/MySqlDb.php');
 $Db = new MySqlDb('localhost', 'root', 'root', 'db');
-
-
-
-
 
 ?>
 <!DOCTYPE html>
@@ -13,7 +9,8 @@ $Db = new MySqlDb('localhost', 'root', 'root', 'db');
 <html lang="en">
 <head>
    <meta charset="utf-8">
-   <title>untitled</title>
+   <link rel="stylesheet" href="stylesheets/style.css">
+   <title>Tasker</title>
 </head>
 <body>
 <pre>
