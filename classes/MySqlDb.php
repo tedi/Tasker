@@ -18,6 +18,7 @@ class MysqlDB {
     * @return array Contains the returned rows from the query.
     */
 
+   //testing a function i wrote in projects class to try and see why it won't work
    //public function get_all_projects ()
     //{
         //$tableName = 'projects';
