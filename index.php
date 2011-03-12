@@ -1,7 +1,10 @@
 <?php
 
 require_once('MySqlDb.php');
-$Db = new MySqlDb('localhost', 'root', 'root', 'db');
+$Db = new MySqlDb('localhost', 'tcass84', '985300', 'oop-sql');
+
+//$Db->where('id', 6);
+$results = $Db->get('posts');
 
 
 
