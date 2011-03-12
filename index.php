@@ -10,7 +10,6 @@ $project = new MysqlDB();
 //    'task_name' => 'task one',
 //    'project_id' => '3'
 //);
-
 $arc_task = $project->archived_tasks('tasks');
 print_r($arc_task);
 ?>
