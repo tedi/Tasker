@@ -3,17 +3,23 @@
 require_once('classes/MySqlDb.php');
 require_once('classes/tasks.php');
 
-$project = new MysqlDB();
+//$project = new MysqlDB();
+//
+//$results=$project->get('tasks');
+//print_r($results);
 
-$results=$project->get('tasks');
-print_r($results);
+$all = new tasks();
+//print_r($all->get('tasks');
+print_r($all->where('users.task_deleted',1));
+
 
 //$insertData = array(
 //    'task_name' => 'task two',
 //    'project_id' => '2'
 //);
+
 $tasks = new tasks();
-$project->create_tasks('tasks',$insertData);
+$tasks->create_task();
 
 
 $tasks = new tasks();
@@ -32,8 +38,12 @@ print_r($arc_task);
     <br />
     <hr />
     <form>
-        Task Name: <input type="text" name="task_name" value="<?php  $insertData[$title]; ?>" /><br />
-        Project ID: <input type="text" name="project_id" value="<?php  $project_id; ?>" />
+        <input type="hidden" name="task_id" value="<?php  $task_id; ?>" /><br />
+        Task Name: <input type="text" name="task_name" value="<?php  $task_name; ?>" /><br />
+        Project ID: <input type="text" name="project_id" value="<?php  $project_id; ?>" /><br />
+        Task Creator: <input type="text" name="task_creator" value="<?php  $creator; ?>" /><br />
+        Task Assigned To: <input type="text" name="task_assigned" value="<?php  $assigned; ?>" /><br />
+        <input type="submit" value="Submit" <?php ?> />
     </form>
 <pre>
 </pre>

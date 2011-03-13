@@ -9,17 +9,20 @@ class tasks extends MysqlDB {
 
     public function create_task() {
 
-    parent::insert($tableName, $insertData);
+    $task_id =
+    $title =
+    $project_id =
+    $creator =
+    $assigned  =
 
-      $tableName = 'tasks';
-      $insertData = array(
+    parent::insert('tasks', array(
             'task_id'=>$task_id,
             'task_name'=>$title,
             'project_id'=>$project_id,
             'task_creator'=>$creator,
             'task_assigned'=>$assigned
-        );
-            return $insertData;
+        ));
+            
   }
 
     public function delete_task(){
@@ -32,9 +35,14 @@ class tasks extends MysqlDB {
 
     public function get_task_where_project_id(){
 
+        parent::get($tableName);
+        parent::where(project_id, '3');
+
     }
 
     public function get_all_tasks(){
+
+        parent::get($tableName);
 
     }
 
