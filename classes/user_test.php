@@ -1,8 +1,9 @@
 <?php
+//start session
+session_start();
 include('MySqlDB.php');
 include('user.php');
 
-$db = new MysqlDB;
 $user = new User();
 
 
@@ -17,10 +18,19 @@ $user = new User();
         <title></title>
     </head>
     <body>
+        <h1>Test Page</h1>
         <?php
-        $users = $user->get_users();
-        //$exist = $user->_user_exists('damills');
-        var_dump($users);
+        /*$tableData = array(
+          'email' => 'daveee@hotmails.com',
+          'user_category' => '3',
+		  'is_admin' => '1'
+        );*/
+        //$test = $user->update_user('damill', $tableData);
+        $test = $user->register('damills', 'daves@email.com', 'WQWE23');
+        var_dump($test);
+                //$login = $user->logo();
+		//var_dump($login);
+		//var_dump($_SESSION['username']);
         ?>
     </body>
 </html>
