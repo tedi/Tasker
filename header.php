@@ -9,6 +9,13 @@
 	
 	<title>Tasker App</title>
 	<link rel="stylesheet" href="stylesheets/style.css">
+	<script type="text/javascript" src="js/jquery-1.5.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tipsy.js"></script>
+	<script type='text/javascript'>
+		$(function() {
+		$('.drop').tipsy({fade: false, gravity: 's'});
+		});
+	</script>
 </head>
 <body>
 <div id="bodywrap">

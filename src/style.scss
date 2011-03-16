@@ -6,6 +6,10 @@
 @import "compass/css3";
 @import "compass/layout/sticky-footer";
 
+
+
+$green_hover: #5c8327;
+$green_border: #253410;
 /**Variables**/
 $blueprint_grid_columns: 24;
 $blueprint_grid_width: 30px;
@@ -104,15 +108,276 @@ body{
 	} //end navigation
 } //end header
 #body{
-color: $color;
-border-top: dashed 4px $color;
-@include column(24, true);
-margin-top: 15px;
-#dashboard {
-margin-top: 30px;
-}
+	color: $color;
+	border-top: dashed 4px $color;
+	@include column(24, true);
+	margin-top: 15px;
+	#dashboard {
+		#newtask {
+		
+			margin-top: 20px;
+			@include column(24, true);
+			#leftform {
+				@include column(12, true);
+			}
+			#rightform {
+				@include column(12, true);
+			}
+			#submittask {
+				
+				@include column(24, true);
+			}
+			input {
+				border: medium none;
+			    height: 20px;
+			    margin-bottom: 18px;
+			    padding: 13px 0 13px 10px;
+			    width: 260px;
+			    background:#fffdd8;
+				-moz-border-radius:5px;
+				-webkit-border-radius:5px;
+				color: $green;
+				font-size: 120%;
+				
+			}
+			.btn {
+				background: url("../images/addtask.png") no-repeat scroll left top transparent;
+			    border: medium none;
+			    cursor: pointer;
+			    height: 53px;
+			    overflow: hidden;
+			    padding: 0;
+			    text-indent: -2000em;
+			    width: 275px;
+			    margin-top: 30px;
+			}
+			label {
+				@include column(3, true);
+			}
+			select {
+				border: medium none;
+			    height: 50px;
+			    margin-bottom: 18px;
+			    padding: 13px 0 13px 10px;
+			    width: 260px;
+			    background:#fffdd8;
+				-moz-border-radius:5px;
+				-webkit-border-radius:5px;
+				color: $green;
+				font-size: 120%;
+				
+			}
+			
+			 textarea {
+				color: #E46508;
+			    font-family: Georgia,"Times New Roman",Times,serif;
+			    font-size: 100%;
+			    margin-top: 2px;
+			    padding: 0;
+			    text-align: left;
+			    
+			}
+		} //end newtask
+		//forms
+		#formstyle {
+			margin-top: 20px;
+			@include column(24, true);
+			#register
+			{
+			a {
+			@include column(24, true);
+			text-decoration: none;
+			color: #fff125;
+			font-style: italic;
+			font-size: 90%;
+			&:hover {
+				text-decoration: underline;
+			}
+			}
+			}
+			
+			//form aligning
+			#leftform {
+				@include column(12, true);
+			}
+			#rightform {
+				@include column(12, true);
+			}
+			#submittask {
+				
+				@include column(24, true);
+			}
+			//end form aligning
+			
+			//form butons
+			.btn {
+				border: medium none;
+			    cursor: pointer;
+			    height: 53px;
+			    overflow: hidden;
+			    padding: 0;
+			    text-indent: -2000em;
+			    width: 275px;
+			    margin-top: 30px;
+			}
+			.newtaskbtn {
+				background: url("../images/addtask.png") no-repeat scroll left top transparent;
+			}
+			.newprojectbtn {
+				background: url("../images/addproject.png") no-repeat scroll left top transparent;
+			}
+			.loginbtn {
+				background: url("../images/login.png") no-repeat scroll left top transparent;
+			}
+			.registerbtn {
+				background: url("../images/registerbtn.png") no-repeat scroll left top transparent;
+			}
+			//end form buttons
+			//form elements
+			input {
+				border: medium none;
+			    height: 20px;
+			    margin-bottom: 18px;
+			    padding: 13px 0 13px 10px;
+			    width: 260px;
+			    background:#fffdd8;
+				-moz-border-radius:5px;
+				-webkit-border-radius:5px;
+				color: $green;
+				font-size: 120%;
+				
+			}
+
+			label {
+				@include column(3);
+			}
+			select {
+				border: medium none;
+			    height: 50px;
+			    margin-bottom: 18px;
+			    padding: 13px 0 13px 10px;
+			    width: 260px;
+			    background:#fffdd8;
+				-moz-border-radius:5px;
+				-webkit-border-radius:5px;
+				color: $green;
+				font-size: 120%;
+				
+			}
+			
+			 textarea {
+				border: medium none;
+			    height: 20px;
+			    margin-bottom: 18px;
+			    padding: 13px 0 13px 10px;
+			    width: 260px;
+			    background:#fffdd8;
+				-moz-border-radius:5px;
+				-webkit-border-radius:5px;
+				color: $green;
+				font-size: 120%;
+				height: 127px;
+				width: 320px;
+			    
+			}
+			
+			
+			//end form elements
+		} 
+
+		margin-top: 30px;
+		.single_project, #formstyle {
+			border: 1px solid rgba(0,0,0,0.1);
+			position: relative;
+			@include push(.5);
+			background-color: rgba(0,0,0,0.1);
+			@include border-radius(9px);
+			padding: 20px;
+			@include column(22, true);
+			&:hover {
+				@include box-shadow;
+			}
+			a {
+				text-decoration: none;
+			}
+		h2.project_name 
+		{
+			background-color: rgba(0,0,0,0.1);
+			font-weight: bold;	
+			@include column(22, true);
+			padding: 10px;
+			margin-bottom: 10px;
+			@include border-top-left-radius(9px);
+			@include border-bottom-left-radius(9px);
+			&:hover {
+				background-color: $color;
+				color: $green;
+				}
+			&:hover a {
+			color: $green;
+			}
+			a {
+				color: $color;
+				}
+			span {
+			position: absolute;
+			right: 0px;
+			top: 12px;
+			a {
+				color: $green;
+				&:hover {
+				color: $color;
+				}
+			}
+			}
+		}
+		ul.projects 
+		{
+		//@include pretty-bullets("../images/check.png", 17px, 13px);
+
+		li {
+		list-style-type:none;
+
+		
+		padding-top: 10px;
+		
+		&:hover {
+		
+		}
+		a.task{
+			background: url(../images/check.png) left center no-repeat;
+			background-position: 0px -14px;
+			padding-left: 17px;
+			text-decoration: none;
+			color: $color;
+			height: 15px;
+			&:hover {
+				background-position: 0px 3px;
+			}
+		}
+		.check {
+			visibility: hidden;
+		}
+		span.del {
+			visibility: hidden;
+		}
+		&:hover span.del{
+			visibility: visible;
+		}
+		span.edit {
+			visibility: hidden;
+		}
+		&:hover span.edit{
+			visibility: visible;
+		}
+		}
+		}
+		margin-top: 30px;
+	}//end single project
+	}//end dashboard
 }//end body
 #footer{
+	@include column(24, true);
 	margin-top: 40px;
 	border-top: dashed 4px $color;
 	p.site_info {
@@ -121,3 +386,52 @@ margin-top: 30px;
 	}
 }
 } //end bodywrap
+
+//buton
+a.button {
+	  // you can pass "left" or "right" to +anchor-button to float it in that direction
+	  // or you can pass no argument to leave it inline-block (cross browser safe!) within
+	  // the flow of your page.
+	  @include anchor-button(left);
+	  // All the button color mixins take 4 optional arguments:
+	  // font color, background color, border color, border highlight color
+	  // the first three default to constants set in blueprint/buttons.sass
+	  // the last one defaults to a shade lighter than the border color.
+	  @include button-colors($green, $color, $color);
+	  @include button-hover-colors($color, $green, $green);
+	  @include button-active-colors($color, $green, $green); 
+	  @include border-radius ($border_radius);
+	  &:hover{
+	  @include text-shadow(#666, 1px, 1px, 1px); 
+	  }
+	  }
+	  
+	  
+	  
+	  //project button
+a.projectbutton {
+	  // you can pass "left" or "right" to +anchor-button to float it in that direction
+	  // or you can pass no argument to leave it inline-block (cross browser safe!) within
+	  // the flow of your page.
+	  @include anchor-button(right);
+	  // All the button color mixins take 4 optional arguments:
+	  // font color, background color, border color, border highlight color
+	  // the first three default to constants set in blueprint/buttons.sass
+	  // the last one defaults to a shade lighter than the border color.
+	  @include button-colors($green, $color, $color);
+	  @include button-hover-colors($color, $green, $green);
+	  @include button-active-colors($color, $green, $green); 
+	  @include border-radius ($border_radius);
+	  &:hover{
+	  @include text-shadow(#666, 1px, 1px, 1px); 
+	  }
+	  }
+	  
+//tooltip
+.tipsy { padding: 5px; font-size: 14px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat;  background-image: url(../images/tipsy.gif); }
+.tipsy-inner { padding: 5px 8px 4px 8px; background-color: #142702; color: $color; max-width: 200px; text-align: center; }
+.tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
+.tipsy-north { background-position: top center; }
+.tipsy-south { background-position: bottom center; }
+.tipsy-east { background-position: right center; }
+.tipsy-west { background-position: left center; }
