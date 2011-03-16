@@ -94,11 +94,10 @@ class User extends MysqlDB {
 
     }
 
-    function register($username, $email, $password, $category = NULL)
+    function register($username, $email, $password)
     {
         //register a user
-        
-		
+        		
         //check to see if username already exists
         
         $exists = $this->_user_exists($username);
@@ -112,13 +111,19 @@ class User extends MysqlDB {
             //hash password
             $password = $this->_hash_password($password);
             //if new user, create user
+            $new = new User();
             $insertData = array(
                 'username' => $username,
                 'email' => $email,
-                'user_category' => $category,
                 'password' => $password
             );
-            $insert = $this->insert('users', $insertData);
+            
+            
+            
+
+            $insert = $new->insert('users', $insertData);
+            
+            //return true/false
             if($insert)
             {
                 return true;
@@ -131,7 +136,7 @@ class User extends MysqlDB {
         
         
         
-        //return true/false
+        
         
 
     }
@@ -187,14 +192,14 @@ class User extends MysqlDB {
         // and the values represent the new values. $username represents the 
         // current username prior to any updates.
 
-        //update user info
+       
         $exists = $this->_user_exists($username);
         if(!$exists){
 
             $error = 'User does not exist!';
             return $error;
         }
-        
+         
             
             foreach($user_info as $key => $value){
 
@@ -205,10 +210,7 @@ class User extends MysqlDB {
                         break;*/
                     case 'email':
                         $tableData['email'] = $value;
-                        break;
-                    /*case 'password':
-                        $tableData['password'] = $value;
-                        break;*/
+                        break;                    
                     case 'user_category':
                         $tableData['user_category'] = $value;
                         break;
@@ -218,18 +220,21 @@ class User extends MysqlDB {
                     case 'is_admin':
                         $tableData['is_admin'] = $value;
                         break;
+                    case 'password':
+                        $tableData['password'] = $value;
+                        break;
                     default:
                         break;
 
                }
            }
             
-			$user = $this->get_user($username);
-            			
-			$new = new User();
-			$new->where('user_id', $user['user_id']);
+            $user = $this->get_user($username);
+            //update user info		
+            $new = new User();
+            $new->where('user_id', $user['user_id']);
             $update = $new->update('users', $tableData);
-
+            //return true if successful
            if($update)
             {
                 return true;
@@ -238,7 +243,7 @@ class User extends MysqlDB {
             {
                 return false;
             }
-        //return true if successful
+        
         }
     
 
@@ -286,6 +291,42 @@ class User extends MysqlDB {
 			return false;
 		}
 
+    }
+
+    function change_password($oldPW, $newPW)
+    {
+        //verify old password
+        $old = $this->_hash_password($oldPW);
+
+        $username = $_SESSION['username'];
+
+        if(!isset($_SESSION['username']))
+                {
+                    $error = 'You must be logged in to change your password.';
+                    return $error;
+                }
+        $this->where('username', $username);
+        $user = $this->get('users');
+        $user = $user[0];
+
+        if($user['password']!=$old)
+            {
+                return false;
+            }
+        else
+        {
+            //update with new password
+            $newpass = $this->_hash_password($newPW);
+
+            $user_info = array(
+                'password' => $newpass
+            );
+            var_dump($user_info);
+            var_dump($username);
+            $update = $this->update_user($username, $user_info);
+            
+            return $update;
+        }
     }
 }
 
