@@ -363,6 +363,17 @@ body{
 				background-position: 0px 3px;
 			}
 		}
+		a.restoretask{
+			background: url(../images/heart.png) left center no-repeat;
+			background-position: 0px -14px;
+			padding-left: 17px;
+			text-decoration: none;
+			color: $color;
+			height: 15px;
+			&:hover {
+				background-position: 0px 3px;
+			}
+		}
 		a.user{
 			
 			padding-left: 17px;
