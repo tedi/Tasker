@@ -5,7 +5,7 @@ require_once('classes/Admin.php');
 
 $priority = new Admin();
 
-$priority->update_category(12, "Clients");
+$results = $priority->sort_priority();
 
 ?>
 <!DOCTYPE html>

@@ -113,6 +113,19 @@ class Admin extends MySqlDB {
            return $priority;
        }
 
+  public function sort_priority()
+       {
+           $priorities = parent::get('projects');
+
+           $prior_id = array();
+
+           foreach($priorities as $priority){
+               $prior_id[] .= $priority['project_priority'];
+           }
+
+           $sorted_priority = sort($prior_id);
+       }
+
   public function create_priority($insertData){
 
       $insertPriority = array(
