@@ -1,60 +1,36 @@
 <?php
-
 require_once('classes/MySqlDb.php');
-
 
 class tasks extends MysqlDB {
 
     public function __construct(){
 
-
     parent::__construct();
        }
 
     public function create_task ($title, $project_id, $creator, $assigned) {
-     
+
       $insertData = array(
-
-            
-    parent::__construct();
-       }
-
-    public function create_task() {
-
-    $task_id =
-    $title =
-    $project_id =
-    $creator =
-    $assigned  =
-
-    parent::insert('tasks', array(
-            'task_id'=>$task_id,
-
             'task_name'=>$title,
             'project_id'=>$project_id,
             'task_creator'=>$creator,
             'task_assigned'=>$assigned
-
-        ));
-            
-
-        )
-
+        );
             $create = parent::insert('tasks', $insertData);
             return $create;
-
+            //echo "Task Created.";
   }
 
     public function delete_task(){
 
     }
 
-
     public function update_task($task_id,$tableData){
 
         $this->where('task_id', $task_id);
 
-        
+        //print_r($tableData);
+
         $tableData = array(
             'task_name' => $tableData['title'],
             'task_description' => $tableData['description'],
@@ -68,9 +44,14 @@ class tasks extends MysqlDB {
             'task_status' => $tableData['status']
         );
 
-       
-    
-              
+
+        //print_r($tableData);
+
+
+        //$this->where('task_id', $task_id);
+        //echo $task_id;
+        //$update = parent::update('tasks',$tableData);
+
         $update = $this->update('tasks', $tableData);
         die;
         }
@@ -87,24 +68,9 @@ class tasks extends MysqlDB {
     public function get_all_tasks(){
         $all_tasks = parent::get('tasks');
         return $all_tasks;
-
-    public function update_task(){
-
     }
-
-    public function get_task_where_project_id(){
-
-        parent::get($tableName);
-        parent::where(project_id, '3');
-
-    }
-
-    public function get_all_tasks(){
-
-
 
     public function archived_tasks(){
-
 
          parent::where('task_deleted', 1);
 
@@ -113,20 +79,6 @@ class tasks extends MysqlDB {
        return $tasks;
     }
 
-
-
-
-     
-        $tasks = $this->get('tasks');
-        
-       foreach($tasks as $arc_task){
-
-          $arc_task = $this->where('task_deleted',1);
-          
-          return $arc_task;
-
-       }   
-    }
 
 
   public function get_by_owner(){

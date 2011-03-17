@@ -6,7 +6,7 @@ include "header.php";
 
 <div class="dashboard_project">
 <h2 class="project_name"><a href="#" class="drop" title="Go to projects/tasks page">Project name</a><span class="edit"><a href="editproject.php" class="drop" title="Edit project"><img src="images/edit.png"></a></span></div>
->>>>>>> master
+
 
 <div class="dashboard_project">
 <h2 class="project_name"><a href="#" class="drop" title="Go to projects/tasks page">Other project</a><span class="edit"><a href="editproject.php" class="drop" title="Edit project"><img src="images/edit.png"></a></span></div>
@@ -17,7 +17,7 @@ include "header.php";
 
 </div>
 
-<<<<<<< HEAD
+
 <html lang="en">
 <head>
    <title>untitled</title>
