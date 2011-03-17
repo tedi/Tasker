@@ -1,9 +1,13 @@
 <?php
+<<<<<<< HEAD
 require_once('classes/MySqlDb.php');
+=======
+>>>>>>> c7370b4e5a2c283f0a261aa644bdb683b54d06c7
 
 class tasks extends MysqlDB {
 
     public function __construct(){
+<<<<<<< HEAD
 
     parent::__construct();
        }
@@ -11,20 +15,38 @@ class tasks extends MysqlDB {
     public function create_task ($title, $project_id, $creator, $assigned) {
      
       $insertData = array(
+=======
+            
+    parent::__construct();
+       }
+
+    public function create_task() {
+
+    parent::insert($tableName, $insertData);
+
+      $tableName = 'tasks';
+      $insertData = array(
+            'task_id'=>$task_id,
+>>>>>>> c7370b4e5a2c283f0a261aa644bdb683b54d06c7
             'task_name'=>$title,
             'project_id'=>$project_id,
             'task_creator'=>$creator,
             'task_assigned'=>$assigned
         );
+<<<<<<< HEAD
             $create = parent::insert('tasks', $insertData);
             return $create;
             //echo "Task Created.";
+=======
+            return $insertData;
+>>>>>>> c7370b4e5a2c283f0a261aa644bdb683b54d06c7
   }
 
     public function delete_task(){
 
     }
 
+<<<<<<< HEAD
     public function update_task($task_id,$tableData){
 
         $this->where('task_id', $task_id);
@@ -68,10 +90,23 @@ class tasks extends MysqlDB {
     public function get_all_tasks(){
         $all_tasks = parent::get('tasks');
         return $all_tasks;
+=======
+    public function update_task(){
+
+    }
+
+    public function get_task_where_project_id(){
+
+    }
+
+    public function get_all_tasks(){
+
+>>>>>>> c7370b4e5a2c283f0a261aa644bdb683b54d06c7
     }
 
     public function archived_tasks(){
 
+<<<<<<< HEAD
          parent::where('task_deleted', 1);
 
         $tasks = parent::get('tasks');
@@ -81,6 +116,20 @@ class tasks extends MysqlDB {
 
 
 
+=======
+     
+        $tasks = $this->get('tasks');
+        
+       foreach($tasks as $arc_task){
+
+          $arc_task = $this->where('task_deleted',1);
+          
+          return $arc_task;
+
+       }   
+    }
+
+>>>>>>> c7370b4e5a2c283f0a261aa644bdb683b54d06c7
   public function get_by_owner(){
 
   }
