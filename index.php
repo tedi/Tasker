@@ -1,35 +1,23 @@
 <?php
-
-require_once('classes/MySqlDb.php');
-require_once('classes/tasks.php');
-
-//$project = new MysqlDB();
-//
-//$results=$project->get('tasks');
-//print_r($results);
-
-$all = new tasks();
-//print_r($all->get('tasks');
-print_r($all->where('users.task_deleted',1));
-
-
-//$insertData = array(
-//    'task_name' => 'task two',
-//    'project_id' => '2'
-//);
-
-$tasks = new tasks();
-$tasks->create_task();
-
-
-$tasks = new tasks();
-$arc_task = $tasks->archived_tasks('tasks');
-print_r($arc_task);
+include "header.php"; 
 ?>
+<div id="dashboard">
+<img src="images/dashboard.png">
+
+<div class="dashboard_project">
+<h2 class="project_name"><a href="#" class="drop" title="Go to projects/tasks page">Project name</a><span class="edit"><a href="editproject.php" class="drop" title="Edit project"><img src="images/edit.png"></a></span></div>
+>>>>>>> master
+
+<div class="dashboard_project">
+<h2 class="project_name"><a href="#" class="drop" title="Go to projects/tasks page">Other project</a><span class="edit"><a href="editproject.php" class="drop" title="Edit project"><img src="images/edit.png"></a></span></div>
 
 
-<!DOCTYPE html>
+<div class="dashboard_project">
+<h2 class="project_name"><a href="#" class="drop" title="Go to projects/tasks page">And another</a><span class="edit"><a href="editproject.php" class="drop" title="Edit project"><img src="images/edit.png"></a></span></div>
 
+</div>
+
+<<<<<<< HEAD
 <html lang="en">
 <head>
    <title>untitled</title>
@@ -49,3 +37,6 @@ print_r($arc_task);
 </pre>
 </body>
 </html>
+=======
+<?php include "footer.php"; ?>
+
