@@ -286,7 +286,7 @@ body{
 		} 
 
 		margin-top: 30px;
-		.single_project, #formstyle {
+		.single_project, #formstyle, .dashboard_project {
 			border: 1px solid rgba(0,0,0,0.1);
 			position: relative;
 			@include push(.5);
@@ -374,6 +374,9 @@ body{
 		}
 		margin-top: 30px;
 	}//end single project
+	ul.dashboard_projects {
+		
+	}
 	}//end dashboard
 }//end body
 #footer{
