@@ -584,26 +584,37 @@ body {
   background-position: 0px 3px;
 }
 /* line 366, ../src/style.scss */
+#bodywrap #body #dashboard .single_project ul.projects li a.user, #bodywrap #body #dashboard #formstyle ul.projects li a.user, #bodywrap #body #dashboard .dashboard_project ul.projects li a.user {
+  padding-left: 17px;
+  text-decoration: none;
+  color: #fffde0;
+  height: 15px;
+}
+/* line 372, ../src/style.scss */
+#bodywrap #body #dashboard .single_project ul.projects li a.user:hover, #bodywrap #body #dashboard #formstyle ul.projects li a.user:hover, #bodywrap #body #dashboard .dashboard_project ul.projects li a.user:hover {
+  background-position: 0px 3px;
+}
+/* line 376, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li .check, #bodywrap #body #dashboard #formstyle ul.projects li .check, #bodywrap #body #dashboard .dashboard_project ul.projects li .check {
   visibility: hidden;
 }
-/* line 369, ../src/style.scss */
+/* line 379, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li span.del, #bodywrap #body #dashboard #formstyle ul.projects li span.del, #bodywrap #body #dashboard .dashboard_project ul.projects li span.del {
   visibility: hidden;
 }
-/* line 372, ../src/style.scss */
+/* line 382, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li:hover span.del, #bodywrap #body #dashboard #formstyle ul.projects li:hover span.del, #bodywrap #body #dashboard .dashboard_project ul.projects li:hover span.del {
   visibility: visible;
 }
-/* line 375, ../src/style.scss */
+/* line 385, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li span.edit, #bodywrap #body #dashboard #formstyle ul.projects li span.edit, #bodywrap #body #dashboard .dashboard_project ul.projects li span.edit {
   visibility: hidden;
 }
-/* line 378, ../src/style.scss */
+/* line 388, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li:hover span.edit, #bodywrap #body #dashboard #formstyle ul.projects li:hover span.edit, #bodywrap #body #dashboard .dashboard_project ul.projects li:hover span.edit {
   visibility: visible;
 }
-/* line 390, ../src/style.scss */
+/* line 400, ../src/style.scss */
 #bodywrap #footer {
   display: inline;
   float: left;
@@ -616,12 +627,12 @@ body {
 * html #bodywrap #footer {
   overflow-x: hidden;
 }
-/* line 394, ../src/style.scss */
+/* line 404, ../src/style.scss */
 #bodywrap #footer p.site_info {
   margin-top: 30px;
 }
 
-/* line 402, ../src/style.scss */
+/* line 412, ../src/style.scss */
 a.button {
   display: inline;
   float: left;
@@ -667,12 +678,12 @@ a.button:active {
   border-color: #5fa916 #4f9906 #4f9906 #5fa916;
   color: #fffde0;
 }
-/* line 415, ../src/style.scss */
+/* line 425, ../src/style.scss */
 a.button:hover {
   text-shadow: #666666 1px 1px 1px;
 }
 
-/* line 423, ../src/style.scss */
+/* line 433, ../src/style.scss */
 a.projectbutton {
   display: inline;
   float: right;
@@ -718,12 +729,12 @@ a.projectbutton:active {
   border-color: #5fa916 #4f9906 #4f9906 #5fa916;
   color: #fffde0;
 }
-/* line 436, ../src/style.scss */
+/* line 446, ../src/style.scss */
 a.projectbutton:hover {
   text-shadow: #666666 1px 1px 1px;
 }
 
-/* line 442, ../src/style.scss */
+/* line 452, ../src/style.scss */
 .tipsy {
   padding: 5px;
   font-size: 14px;
@@ -733,7 +744,7 @@ a.projectbutton:hover {
   background-image: url(../images/tipsy.gif);
 }
 
-/* line 443, ../src/style.scss */
+/* line 453, ../src/style.scss */
 .tipsy-inner {
   padding: 5px 8px 4px 8px;
   background-color: #142702;
@@ -742,28 +753,28 @@ a.projectbutton:hover {
   text-align: center;
 }
 
-/* line 444, ../src/style.scss */
+/* line 454, ../src/style.scss */
 .tipsy-inner {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
 
-/* line 445, ../src/style.scss */
+/* line 455, ../src/style.scss */
 .tipsy-north {
   background-position: top center;
 }
 
-/* line 446, ../src/style.scss */
+/* line 456, ../src/style.scss */
 .tipsy-south {
   background-position: bottom center;
 }
 
-/* line 447, ../src/style.scss */
+/* line 457, ../src/style.scss */
 .tipsy-east {
   background-position: right center;
 }
 
-/* line 448, ../src/style.scss */
+/* line 458, ../src/style.scss */
 .tipsy-west {
   background-position: left center;
 }

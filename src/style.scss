@@ -363,6 +363,16 @@ body{
 				background-position: 0px 3px;
 			}
 		}
+		a.user{
+			
+			padding-left: 17px;
+			text-decoration: none;
+			color: $color;
+			height: 15px;
+			&:hover {
+				background-position: 0px 3px;
+			}
+		}
 		.check {
 			visibility: hidden;
 		}
