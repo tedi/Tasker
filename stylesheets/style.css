@@ -407,14 +407,18 @@ body {
   background: url("../images/addproject.png") no-repeat scroll left top transparent;
 }
 /* line 229, ../src/style.scss */
+#bodywrap #body #dashboard #formstyle .editprojectbtn {
+  background: url("../images/submitedits.png") no-repeat scroll left top transparent;
+}
+/* line 232, ../src/style.scss */
 #bodywrap #body #dashboard #formstyle .loginbtn {
   background: url("../images/login.png") no-repeat scroll left top transparent;
 }
-/* line 232, ../src/style.scss */
+/* line 235, ../src/style.scss */
 #bodywrap #body #dashboard #formstyle .registerbtn {
   background: url("../images/registerbtn.png") no-repeat scroll left top transparent;
 }
-/* line 237, ../src/style.scss */
+/* line 240, ../src/style.scss */
 #bodywrap #body #dashboard #formstyle input {
   border: medium none;
   height: 20px;
@@ -427,7 +431,7 @@ body {
   color: #4f9906;
   font-size: 120%;
 }
-/* line 251, ../src/style.scss */
+/* line 254, ../src/style.scss */
 #bodywrap #body #dashboard #formstyle label {
   display: inline;
   float: left;
@@ -438,7 +442,7 @@ body {
 * html #bodywrap #body #dashboard #formstyle label {
   overflow-x: hidden;
 }
-/* line 254, ../src/style.scss */
+/* line 257, ../src/style.scss */
 #bodywrap #body #dashboard #formstyle select {
   border: medium none;
   height: 50px;
@@ -451,7 +455,7 @@ body {
   color: #4f9906;
   font-size: 120%;
 }
-/* line 268, ../src/style.scss */
+/* line 271, ../src/style.scss */
 #bodywrap #body #dashboard #formstyle textarea {
   border: medium none;
   height: 20px;
@@ -466,7 +470,7 @@ body {
   height: 127px;
   width: 320px;
 }
-/* line 289, ../src/style.scss */
+/* line 292, ../src/style.scss */
 #bodywrap #body #dashboard .single_project, #bodywrap #body #dashboard #formstyle, #bodywrap #body #dashboard .dashboard_project {
   border: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
@@ -492,18 +496,18 @@ body {
 * html #bodywrap #body #dashboard .single_project, * html #bodywrap #body #dashboard #formstyle, * html #bodywrap #body #dashboard .dashboard_project {
   overflow-x: hidden;
 }
-/* line 297, ../src/style.scss */
+/* line 300, ../src/style.scss */
 #bodywrap #body #dashboard .single_project:hover, #bodywrap #body #dashboard #formstyle:hover, #bodywrap #body #dashboard .dashboard_project:hover {
   -moz-box-shadow: #333333 1px 1px 5px 0;
   -webkit-box-shadow: #333333 1px 1px 5px 0;
   -o-box-shadow: #333333 1px 1px 5px 0;
   box-shadow: #333333 1px 1px 5px 0;
 }
-/* line 300, ../src/style.scss */
+/* line 303, ../src/style.scss */
 #bodywrap #body #dashboard .single_project a, #bodywrap #body #dashboard #formstyle a, #bodywrap #body #dashboard .dashboard_project a {
   text-decoration: none;
 }
-/* line 304, ../src/style.scss */
+/* line 307, ../src/style.scss */
 #bodywrap #body #dashboard .single_project h2.project_name, #bodywrap #body #dashboard #formstyle h2.project_name, #bodywrap #body #dashboard .dashboard_project h2.project_name {
   background-color: rgba(0, 0, 0, 0.1);
   font-weight: bold;
@@ -530,39 +534,39 @@ body {
 * html #bodywrap #body #dashboard .single_project h2.project_name, * html #bodywrap #body #dashboard #formstyle h2.project_name, * html #bodywrap #body #dashboard .dashboard_project h2.project_name {
   overflow-x: hidden;
 }
-/* line 312, ../src/style.scss */
+/* line 315, ../src/style.scss */
 #bodywrap #body #dashboard .single_project h2.project_name:hover, #bodywrap #body #dashboard #formstyle h2.project_name:hover, #bodywrap #body #dashboard .dashboard_project h2.project_name:hover {
   background-color: #fffde0;
   color: #4f9906;
 }
-/* line 316, ../src/style.scss */
+/* line 319, ../src/style.scss */
 #bodywrap #body #dashboard .single_project h2.project_name:hover a, #bodywrap #body #dashboard #formstyle h2.project_name:hover a, #bodywrap #body #dashboard .dashboard_project h2.project_name:hover a {
   color: #4f9906;
 }
-/* line 319, ../src/style.scss */
+/* line 322, ../src/style.scss */
 #bodywrap #body #dashboard .single_project h2.project_name a, #bodywrap #body #dashboard #formstyle h2.project_name a, #bodywrap #body #dashboard .dashboard_project h2.project_name a {
   color: #fffde0;
 }
-/* line 322, ../src/style.scss */
+/* line 325, ../src/style.scss */
 #bodywrap #body #dashboard .single_project h2.project_name span, #bodywrap #body #dashboard #formstyle h2.project_name span, #bodywrap #body #dashboard .dashboard_project h2.project_name span {
   position: absolute;
   right: 0px;
   top: 12px;
 }
-/* line 326, ../src/style.scss */
+/* line 329, ../src/style.scss */
 #bodywrap #body #dashboard .single_project h2.project_name span a, #bodywrap #body #dashboard #formstyle h2.project_name span a, #bodywrap #body #dashboard .dashboard_project h2.project_name span a {
   color: #4f9906;
 }
-/* line 328, ../src/style.scss */
+/* line 331, ../src/style.scss */
 #bodywrap #body #dashboard .single_project h2.project_name span a:hover, #bodywrap #body #dashboard #formstyle h2.project_name span a:hover, #bodywrap #body #dashboard .dashboard_project h2.project_name span a:hover {
   color: #fffde0;
 }
-/* line 338, ../src/style.scss */
+/* line 341, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li, #bodywrap #body #dashboard #formstyle ul.projects li, #bodywrap #body #dashboard .dashboard_project ul.projects li {
   list-style-type: none;
   padding-top: 10px;
 }
-/* line 347, ../src/style.scss */
+/* line 350, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li a.task, #bodywrap #body #dashboard #formstyle ul.projects li a.task, #bodywrap #body #dashboard .dashboard_project ul.projects li a.task {
   background: url(../images/check.png) left center no-repeat;
   background-position: 0px -14px;
@@ -571,31 +575,31 @@ body {
   color: #fffde0;
   height: 15px;
 }
-/* line 354, ../src/style.scss */
+/* line 357, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li a.task:hover, #bodywrap #body #dashboard #formstyle ul.projects li a.task:hover, #bodywrap #body #dashboard .dashboard_project ul.projects li a.task:hover {
   background-position: 0px 3px;
 }
-/* line 358, ../src/style.scss */
+/* line 361, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li .check, #bodywrap #body #dashboard #formstyle ul.projects li .check, #bodywrap #body #dashboard .dashboard_project ul.projects li .check {
   visibility: hidden;
 }
-/* line 361, ../src/style.scss */
+/* line 364, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li span.del, #bodywrap #body #dashboard #formstyle ul.projects li span.del, #bodywrap #body #dashboard .dashboard_project ul.projects li span.del {
   visibility: hidden;
 }
-/* line 364, ../src/style.scss */
+/* line 367, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li:hover span.del, #bodywrap #body #dashboard #formstyle ul.projects li:hover span.del, #bodywrap #body #dashboard .dashboard_project ul.projects li:hover span.del {
   visibility: visible;
 }
-/* line 367, ../src/style.scss */
+/* line 370, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li span.edit, #bodywrap #body #dashboard #formstyle ul.projects li span.edit, #bodywrap #body #dashboard .dashboard_project ul.projects li span.edit {
   visibility: hidden;
 }
-/* line 370, ../src/style.scss */
+/* line 373, ../src/style.scss */
 #bodywrap #body #dashboard .single_project ul.projects li:hover span.edit, #bodywrap #body #dashboard #formstyle ul.projects li:hover span.edit, #bodywrap #body #dashboard .dashboard_project ul.projects li:hover span.edit {
   visibility: visible;
 }
-/* line 382, ../src/style.scss */
+/* line 385, ../src/style.scss */
 #bodywrap #footer {
   display: inline;
   float: left;
@@ -608,12 +612,12 @@ body {
 * html #bodywrap #footer {
   overflow-x: hidden;
 }
-/* line 386, ../src/style.scss */
+/* line 389, ../src/style.scss */
 #bodywrap #footer p.site_info {
   margin-top: 30px;
 }
 
-/* line 394, ../src/style.scss */
+/* line 397, ../src/style.scss */
 a.button {
   display: inline;
   float: left;
@@ -659,12 +663,12 @@ a.button:active {
   border-color: #5fa916 #4f9906 #4f9906 #5fa916;
   color: #fffde0;
 }
-/* line 407, ../src/style.scss */
+/* line 410, ../src/style.scss */
 a.button:hover {
   text-shadow: #666666 1px 1px 1px;
 }
 
-/* line 415, ../src/style.scss */
+/* line 418, ../src/style.scss */
 a.projectbutton {
   display: inline;
   float: right;
@@ -710,12 +714,12 @@ a.projectbutton:active {
   border-color: #5fa916 #4f9906 #4f9906 #5fa916;
   color: #fffde0;
 }
-/* line 428, ../src/style.scss */
+/* line 431, ../src/style.scss */
 a.projectbutton:hover {
   text-shadow: #666666 1px 1px 1px;
 }
 
-/* line 434, ../src/style.scss */
+/* line 437, ../src/style.scss */
 .tipsy {
   padding: 5px;
   font-size: 14px;
@@ -725,7 +729,7 @@ a.projectbutton:hover {
   background-image: url(../images/tipsy.gif);
 }
 
-/* line 435, ../src/style.scss */
+/* line 438, ../src/style.scss */
 .tipsy-inner {
   padding: 5px 8px 4px 8px;
   background-color: #142702;
@@ -734,28 +738,28 @@ a.projectbutton:hover {
   text-align: center;
 }
 
-/* line 436, ../src/style.scss */
+/* line 439, ../src/style.scss */
 .tipsy-inner {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
 
-/* line 437, ../src/style.scss */
+/* line 440, ../src/style.scss */
 .tipsy-north {
   background-position: top center;
 }
 
-/* line 438, ../src/style.scss */
+/* line 441, ../src/style.scss */
 .tipsy-south {
   background-position: bottom center;
 }
 
-/* line 439, ../src/style.scss */
+/* line 442, ../src/style.scss */
 .tipsy-east {
   background-position: right center;
 }
 
-/* line 440, ../src/style.scss */
+/* line 443, ../src/style.scss */
 .tipsy-west {
   background-position: left center;
 }
