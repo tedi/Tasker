@@ -113,7 +113,7 @@ class Admin extends MySqlDB {
            return $priority;
        }
 
-  public function sort_priority()
+ /* public function sort_priority()
        {
            $priorities = parent::get('projects');
 
@@ -123,8 +123,8 @@ class Admin extends MySqlDB {
                $prior_id[] .= $priority['project_priority'];
            }
 
-           $sorted_priority = sort($prior_id);
-       }
+           echo $prior_id;
+       }*/
 
   public function create_priority($insertData){
 
