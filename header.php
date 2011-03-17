@@ -38,6 +38,8 @@
       <li><a href="index.php">Home</a></li>
       <li><a href="projects.php">Projects</a></li>
       <li><a href="archive.php">Archive</a></li>
+      <!-- below only shows for admin accounts -->
+      <li><a href="users.php">Edit users</a></li>
     </ul>
   </div> <!-- end header -->
   <div id="body">
