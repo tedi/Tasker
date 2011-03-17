@@ -3,11 +3,9 @@
 require_once('classes/MySqlDb.php');
 require_once('classes/Admin.php');
 
-$status = new Admin();
+$priority = new Admin();
 
-$status->delete_status(7);
-
-
+$priority->update_category(12, "Clients");
 
 ?>
 <!DOCTYPE html>
