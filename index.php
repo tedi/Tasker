@@ -3,6 +3,8 @@
 require_once('/classes/MySqlDb.php');
 $Db = new MySqlDb('localhost', 'bree', 'password', 'taskerdb');
 
+$Db->get('projects');
+
 
 
 
