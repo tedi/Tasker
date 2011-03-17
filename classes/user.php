@@ -14,7 +14,8 @@ class User extends MysqlDB {
     
     function __construct()
     {
-        parent::__construct();
+        //parent::__construct();
+        parent::__construct('localhost', 'damill3', 'ol2111', 'taskerdb');
     }
 
     function login($username, $password)

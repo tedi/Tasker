@@ -7,6 +7,18 @@ class MysqlDB {
    protected $_query;
    protected $_paramTypeList;
 
+   public function __construct($host, $username, $password, $db) {
+      $this->_mysql = new mysqli($host, $username, $password, $db) or die('There was a problem connecting to the database');
+   }
+
+   /**
+*
+* @param string $query Contains a user-provided select query.
+* @param int $numRows The number of rows total to return.
+* @return array Contains the returned rows from the query.
+*/
+
+  /*
    public function __construct() {
       include('config.php');
       $host = $config['host'] ;
@@ -15,7 +27,7 @@ class MysqlDB {
       $db = $config['database'];
       $this->_mysql = new mysqli($host, $username, $password, $db) or die('There was a problem connecting to the database');
    }
-
+*/
    /**
     *
     * @param string $query Contains a user-provided select query.

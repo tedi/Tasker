@@ -20,17 +20,17 @@ $user = new User();
     <body>
         <h1>Test Page</h1>
         <?php
-        $tableData = array(
-          'email' => 'da@hotmails.com',
-          'user_category' => '3',
-		  'is_admin' => '1'
-        );
-        $test = $user->update_user('damills', $tableData);
+        //$tableData = array(
+          //'email' => 'dave@hotmails.com',
+         // 'user_category' => '3',
+	//	  'is_admin' => '1'
+        //);
+        //$test = $user->update_user('damills', $tableData);
         //$test = $user->register('ham', 'ham@email.com', 'ham1');
         //var_dump($test);
-                //$user->login('ham', 'ham2');
-               // $login = $user->is_logged_in();
-               // echo $login;
+                $user->login('ham', 'ham3');
+                $login = $user->is_logged_in();
+                echo $login;
                 //echo '<br />';
                 
                 //$pw = $user->change_password('ham2', 'ham3');
