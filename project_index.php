@@ -24,13 +24,13 @@ print_r($all_projects);
 <?php
 echo '<h4>test create_project()</h4>';
 //test create_project()
-//$name = 'Update Me';
-//$description = 'candy apples';
-//$owner = '1';
-//$status = '1';
-//$priority = '1';
-//$due_date = '2011-03-14 17:00:00';
-//$proj->create_project($name, $description, $owner, $status, $priority, $due_date);
+$name = 'Update Me';
+$description = 'candy apples';
+$owner = '1';
+$status = '1';
+$priority = '1';
+$due_date = '2011-03-14 17:00:00';
+$proj->create_project($name, $description, $owner, $status, $priority, $due_date);
 ?>
 
 <hr>

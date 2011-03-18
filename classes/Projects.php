@@ -30,7 +30,7 @@ class Projects extends MysqlDB {
         );
         $create = parent::insert('projects', $insertData);
 
-        echo "Project Created.";
+        //echo "Project Created.";
     }
 
     //delete project

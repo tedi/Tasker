@@ -1,5 +1,7 @@
 <?php
 //start session
+require_once ('classes/MySqlDB.php');
+require_once ('classes/Projects.php');
 ?> 
 <!DOCTYPE html>
 <html lang="en">
