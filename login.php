@@ -1,11 +1,18 @@
 <?php
 include "header.php"; 
+
 ?>
+
+
+
 
 <div id="dashboard">
 <img src="images/loginlogo.png">
-
-<form id="formstyle" method="post" action="javascript:alert('Task added!!');">
+<?php 
+    echo $_SESSION['error'];
+    //$SESSION_unset['error'];
+?>
+<form id="formstyle" method="post" action="login_action.php">
 
 			<p id="leftform"><label>Username</label><input class="required inpt" type="text" name="username" value="" /></p>
 			<p id="rightform"><label>Password</label><input class="required inpt" type="password" name="password" value="" /></p>

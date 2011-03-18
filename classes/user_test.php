@@ -28,9 +28,9 @@ $user = new User();
         //$test = $user->update_user('damills', $tableData);
         //$test = $user->register('ham', 'ham@email.com', 'ham1');
         //var_dump($test);
-                $user->login('ham', 'ham3');
-                $login = $user->is_logged_in();
-                echo $login;
+                //$user->login('ham', 'ham3');
+                $login = $user->get_users_info();
+                var_dump($login);
                 //echo '<br />';
                 
                 //$pw = $user->change_password('ham2', 'ham3');

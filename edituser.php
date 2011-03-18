@@ -1,5 +1,16 @@
 <?php
-include "header.php"; 
+session_start();
+require_once('classes/MySqlDb.php');
+require_once('classes/user.php');
+$user = new User();
+$admin = $user->is_admin();
+if(!$admin)
+{
+    header("Location: users.php");
+}
+
+include "header.php";
+
 ?>
 
 <div id="dashboard">

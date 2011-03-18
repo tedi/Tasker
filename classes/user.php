@@ -163,6 +163,15 @@ class User extends MysqlDB {
         
     }
 
+    function get_users_info()
+    {
+        $users = $this->get('users');
+
+        //returns an array of user names
+        return $users;
+
+    }
+
     function get_user($username)
     {
         $this->where('username', $username);
@@ -275,8 +284,8 @@ class User extends MysqlDB {
 		
 		if (!$user_id)
 		{
-			$error = 'User not logged in!';
-			return $error;
+			//$error = 'User not logged in!';
+			return false;
 		}
 		
 		//if so, check admin status

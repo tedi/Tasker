@@ -1,5 +1,11 @@
 <?php
 //start session
+session_start();
+require_once('classes/MySqlDb.php');
+require_once('classes/user.php');
+$user = new User();
+
+
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,16 +29,27 @@
     <h1 id="apptitle"><span>Tasker<sup>&reg;</sup></span></h1>
     <div class="session">
      <!-- This is where the loop starts for the current user check  -->
+     <?php 
+     if ($user->is_logged_in())
+     {
+     ?>
     <!--  This is the case for the logged in user -->
         <strong>
-          Welcome back Tedi! <!-- This is where we will insert the username -->
+          Welcome back <?php echo $_SESSION['username'].'!';?> <!-- This is where we will insert the username -->
           <a href="logout.php">Log Out</a>
         </strong>
-<!--       
+    <?php 
+     }
+     else
+     {?><!--       
       This is the case for when a user is not logged in
-        <a href="login.php">Log In</a> 
-        or
-        <a href="register.php">Register</a>  -->
+         -->
+      <a href="login.php">Log In</a>
+         or
+      <a href="register.php">Register</a>
+    <?php }
+    ?>
+
     </div>
         <ul id="navigation">
       <li><a href="index.php">Home</a></li>
