@@ -63,7 +63,7 @@ print_r($project);
 <?php
 //test update_project()
 echo '<h4>test update_project()</h4>';
-
+/*
 $project_id = 4;
 
 $insertData = array(
@@ -77,10 +77,54 @@ $insertData = array(
 );
 
 $update = $proj->update_project($project_id, $insertData);
+ * 
+ */
 
 ?>
 
 <hr>
+
+<?php
+//test delete_project()
+
+echo '<h4>test delete_project()</h4>';
+/*
+$project_id = 4;
+
+$proj->delete_project($project_id);
+ *
+ */
+
+?>
+
+<hr>
+
+<?php
+//test get_projects_by_owner()
+echo '<h4>test get_projects_by_owner()</h4>';
+/*
+$user_id = 1;
+
+$projects_by_owner = $proj->get_projects_by_owner($user_id);
+print_r($projects_by_owner);
+ *
+ */
+
+?>
+
+<hr>
+
+<?php
+//test get_assigned_projects
+echo '<h4>test get_assigned_projects()</h4>';
+
+$user_id = 1;
+
+$result = $proj->get_assigned_projects($user_id);
+
+print_r($result);
+
+?>
 
 <html>
     <head>

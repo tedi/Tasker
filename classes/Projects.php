@@ -33,14 +33,19 @@ class Projects extends MysqlDB {
         echo "Project Created.";
     }
 
-    //delete project (flag) (update) IN PROGRESS -- will only work (theoretically) if update_project() works...
+    //delete project
     public function delete_project ($project_id)
     {
         $this->where('project_id', $project_id);
-        //$this->update($tableName, $tableData);
+
+        $tableData = array(
+            'project_deleted' => '1'
+        );
+        
+        $this->update('projects', $tableData);
     }
 
-    //update project IN PROGRESS - TEST ME!
+    //update project
     public function update_project ($project_id, $insertData)
     {
         
@@ -114,19 +119,48 @@ class Projects extends MysqlDB {
     public function get_projects_by_owner ($user_id)
     {
         $this->where('project_owner', $user_id);
-        $project = $this->get('projects');
+        $owned_projects = $this->get('projects');
         //returns an array
-        return $project;
+        return $owned_projects;
     }
 
     //get assigned projects -- IN PROGRESS
     public function get_assigned_projects ($user_id)
     {
-        $this->where(/*member id, $user_id*/);
-        //REFER to table project_members;
-        $project = $this->get('project_members');
+        //where current user id = user id....
+        $this->where('user_id', $user_id);
+        //stored in project/members join table, get all info
+        $project_members = $this->get('project_members');
         //returns an array
-        return $project;
+        //
+        //loop through that array to get project ids
+        //put project ids into their own array so we can work with them
+        $proj_ids = array();
+
+        foreach ($project_members as $data_pairs)
+        {
+           $proj_ids[] .= $data_pairs['project_id'];  
+        }
+           print_r ($proj_ids);
+        //now get info from projects table for each project id
+        $assigned_projects = array();
+
+        foreach ($proj_ids as $proj_id)
+        {
+            echo 'in<br>';
+
+            echo $proj_id.'<br>';
+
+            echo 'mid<br>';
+            
+            $assigned_projects[] .= $this->get_project_by_id($proj_ids[0]);
+
+            echo 'end';
+
+            
+        }
+        print_r($assigned_projects);
+
     }
 
     //sort projects??? (date, priority, status) (different functions)
@@ -150,7 +184,7 @@ class Projects extends MysqlDB {
         
     }
 
-    //get archived projects -- IN PROGRESS
+    //get archived projects -- no "is_completed" in projects table
     public function get_completed_projects ()
     {
         $this->where(/*is completed?, 1?*/);
