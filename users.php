@@ -2,6 +2,7 @@
 include "header.php";
 
 $cats = $admin->get_all_category();
+
 ?>
 
 <div id="dashboard">
@@ -15,14 +16,37 @@ $cats = $admin->get_all_category();
         <h2 class="project_name">
             <?php echo $cat['category_description'] ?>
             <span><a class="button" href="newuser.php?id=<?php echo $cat['category_id'] ?>">Add user</a></span></h2>
+            <ul class="projects">
+        <?php
+            $users = $user->get_users();
 
-        <ul class="projects">
-        <li><a href="#" class="user">Bree</a> <span class="del"><a href="#"class="drop" title="Delete user"><img src="images/del.png"></a></span> <span class="edit"><a href="edituser.php" class="drop" title="Edit user"><img src="images/edit.png"></a></span></li>
-        <li><a href="#" class="user">David</a> <span class="del"><a href="#"class="drop" title="Delete user"><img src="images/del.png"></a></span> <span class="edit"><a href="edituser.php" class="drop" title="Edit user"><img src="images/edit.png"></a></span></li>
-        <li><a href="#" class="user">Melisa</a> <span class="del"><a href="#"class="drop" title="Delete user"><img src="images/del.png"></a></span> <span class="edit"><a href="edituser.php" class="drop" title="Edit user"><img src="images/edit.png"></a></span></li>
-        <li><a href="#" class="user">Thomas</a> <span class="del"><a href="#"class="drop" title="Delete user"><img src="images/del.png"></a></span> <span class="edit"><a href="edituser.php" class="drop" title="Edit user"><img src="images/edit.png"></a></span></li>
-        <li><a href="#" class="user">Tedi</a> <span class="del"><a href="#"class="drop" title="Delete user"><img src="images/del.png"></a></span> <span class="edit"><a href="edituser.php" class="drop" title="Edit user"><img src="images/edit.png"></a></span></li>
-        </ul>
+
+
+            foreach($users as $user){?>
+
+                <?php if($user['user_category'] == $cat['category_id']){ ?>
+                        
+                        <li>
+                              <a href="#" class="user"><?php $user['username']; ?></a>
+                              <span class="del">
+                                   <a href="#" class="drop" alt="Something" title="Delete user"><img src="images/del.png" /></a>
+                              </span>
+                              <span class="edit">
+                                  <a href="edituser.php" class="drop" alt="Something" title="Edit user"><img src="images/edit.png" /></a>
+                              </span>
+                        </li>
+                        
+               <?php } else{
+
+                   echo "<li></li>";
+               }?>
+
+
+            <?php    } ?>
+           </ul>
+
+
+        
 
     </div>
 

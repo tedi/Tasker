@@ -2,10 +2,12 @@
 
 class Admin extends MySqlDB {
 
+   //Make connection to through mysqldb class
   public function __construct(){
       parent::__construct('localhost', 'tcass84', '985300', 'taskerdb');
   }
 
+  //use the where and get functions from the mysqldb to get a specific status description
   public function get_status($whereValue)
        {
            parent::where('status_id', $whereValue);
@@ -13,12 +15,13 @@ class Admin extends MySqlDB {
            return $status;
        }
 
+  //use the where and get functions from the mysqldb to get all status descriptions
   public function get_all_status()
        {
            $status = parent::get('status');
            return $status;
        }
-
+    //use the where and get functions from the mysqldb to create status description
   public function create_status($insertData){
 
       $insertStatus = array(
@@ -43,6 +46,7 @@ class Admin extends MySqlDB {
 
   }
 
+  //use the where and get functions from the mysqldb to delete status description
   public function delete_status($whereValue){
       $projects = parent::get('projects');
       $tasks = parent::get('tasks');
@@ -70,7 +74,7 @@ class Admin extends MySqlDB {
       parent::where('status_id', $whereValue);
       parent::delete('status');
   }
-
+//use the where and get functions from the mysqldb to update status description
   public function update_status($statusID, $insertData){
 
         $updateStatus = array(
