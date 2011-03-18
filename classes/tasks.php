@@ -25,36 +25,36 @@ class tasks extends MysqlDB {
 
     }
 
-    public function update_task($task_id,$tableData){
-
-        $this->where('task_id', $task_id);
-
-        //print_r($tableData);
-
-        $tableData = array(
-            'task_name' => $tableData['title'],
-            'task_description' => $tableData['description'],
-            'project_id' => $tableData['project_id'],
-            'task_creator' => $tableData['creator'],
-            'task_assigned' => $tableData['assigned'],
-            'task_completed' => $tableData['completed'],
-            'task_due_date' => $tableData['due_date'],
-            'task_deleted' => $tableData['deleted'],
-            'task_priority' => $tableData['priority'],
-            'task_status' => $tableData['status']
-        );
-
-
-        //print_r($tableData);
-
-
-        //$this->where('task_id', $task_id);
-        //echo $task_id;
-        //$update = parent::update('tasks',$tableData);
-
-        $update = $this->update('tasks', $tableData);
-        die;
-        }
+//    public function update_task($task_id,$tableData){
+//
+//        $this->where('task_id', $task_id);
+//
+//        //print_r($tableData);
+//
+//        $tableData = array(
+//            'task_name' => $tableData['title'],
+//            'task_description' => $tableData['description'],
+//            'project_id' => $tableData['project_id'],
+//            'task_creator' => $tableData['creator'],
+//            'task_assigned' => $tableData['assigned'],
+//            'task_completed' => $tableData['completed'],
+//            'task_due_date' => $tableData['due_date'],
+//            'task_deleted' => $tableData['deleted'],
+//            'task_priority' => $tableData['priority'],
+//            'task_status' => $tableData['status']
+//        );
+//
+//
+//        //print_r($tableData);
+//
+//
+//        //$this->where('task_id', $task_id);
+//        //echo $task_id;
+//        //$update = parent::update('tasks',$tableData);
+//
+//        $update = $this->update('tasks', $tableData);
+//        die;
+//        }
 
     public function get_task_where_project_id($whereValue){
 

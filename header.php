@@ -2,6 +2,8 @@
 //start session
 require_once('classes/MySqlDb.php');
 require_once('classes/tasks.php');
+
+$tasks = new tasks();
 ?> 
 <!DOCTYPE html>
 <html lang="en">

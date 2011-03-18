@@ -1,11 +1,13 @@
 <?php
-include "header.php"; 
+include "header.php";
+
+$tasks = new tasks();
 ?>
 
 <div id="dashboard">
 <img src="images/archivedtasks.png">
 <div class="single_project">
-<ul class="projects">
+<ul class="projects"><?php print_r($tasks->archived_tasks()); ?>
 <li><a href="#" class="restoretask drop" title="Restore Task">Task 1</a> <span class="del"><a href="#"class="drop" title="Delete task"><img src="images/del.png"></a></span> </li>
 <li><a href="#" class="restoretask drop" title="Restore Task">Second task</a> <span class="del"><a href="#"class="drop" title="Delete task"><img src="images/del.png"></a></span> </li>
 <li><a href="#" class="restoretask drop" title="Restore Task">Third task</a> <span class="del"><a href="#"class="drop" title="Delete task"><img src="images/del.png"></a></span> </li>

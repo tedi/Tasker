@@ -17,7 +17,7 @@ include "header.php";
             //print_r ($task);
 
             foreach($tasks as $proj_tasks){
-            $proj_tasks = $tasks->get_task_where_project_id(1);
+            $proj_tasks = $tasks->get_task_where_project_id();
             
             print $proj_tasks;
 
