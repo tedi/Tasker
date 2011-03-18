@@ -64,6 +64,7 @@ class tasks extends MysqlDB {
 
        return $tasks;
     }
+    
 
     public function get_all_tasks(){
         $all_tasks = parent::get('tasks');
@@ -73,6 +74,15 @@ class tasks extends MysqlDB {
     public function archived_tasks(){
 
          parent::where('task_deleted', 1);
+
+        $tasks = parent::get('tasks');
+
+       return $tasks;
+    }
+
+    public function active_tasks(){
+
+         parent::where('task_deleted', o);
 
         $tasks = parent::get('tasks');
 

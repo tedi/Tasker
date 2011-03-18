@@ -1,5 +1,7 @@
 <?php
 //start session
+require_once('classes/MySqlDb.php');
+require_once('classes/tasks.php');
 ?> 
 <!DOCTYPE html>
 <html lang="en">
