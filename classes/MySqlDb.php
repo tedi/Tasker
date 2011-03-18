@@ -7,30 +7,18 @@ class MySqlDB {
    protected $_query;
    protected $_paramTypeList;
 
-<<<<<<< HEAD
 
    public function __construct($host, $username, $password, $db) {
-=======
-   public function __construct() {
-
-       include('details.php');
-       $host = $detail['host'] ;
-       $username = $detail['username'];
-       $password = $detail['password'];
-       $db = $detail['database'];
-
->>>>>>> c7370b4e5a2c283f0a261aa644bdb683b54d06c7
       $this->_mysql = new mysqli($host, $username, $password, $db) or die('There was a problem connecting to the database');
-
    }
 
    /**
-    *
-    * @param string $query Contains a user-provided select query.
-    * @param int $numRows The number of rows total to return.
-    * @return array Contains the returned rows from the query.
-    */
-   public function query($query) 
+*
+* @param string $query Contains a user-provided select query.
+* @param int $numRows The number of rows total to return.
+* @return array Contains the returned rows from the query.
+*/
+   public function query($query)
    {
       $this->_query = filter_var($query, FILTER_SANITIZE_STRING);
 
@@ -41,13 +29,13 @@ class MySqlDB {
    }
 
    /**
-    * A convenient SELECT * function.
-    *
-    * @param string $tableName The name of the database table to work with.
-    * @param int $numRows The number of rows total to return.
-    * @return array Contains the returned rows from the select query.
-    */
-   public function get($tableName, $numRows = NULL) 
+* A convenient SELECT * function.
+*
+* @param string $tableName The name of the database table to work with.
+* @param int $numRows The number of rows total to return.
+* @return array Contains the returned rows from the select query.
+*/
+   public function get($tableName, $numRows = NULL)
    {
 
       $this->_query = "SELECT * FROM $tableName";
@@ -59,12 +47,12 @@ class MySqlDB {
    }
 
    /**
-    *
-    * @param <string $tableName The name of the table.
-    * @param array $insertData Data containing information for inserting into the DB.
-    * @return boolean Boolean indicating whether the insert query was completed succesfully.
-    */
-   public function insert($tableName, $insertData) 
+*
+* @param <string $tableName The name of the table.
+* @param array $insertData Data containing information for inserting into the DB.
+* @return boolean Boolean indicating whether the insert query was completed succesfully.
+*/
+   public function insert($tableName, $insertData)
    {
       $this->_query = "INSERT into $tableName";
       $stmt = $this->_buildQuery(NULL, $insertData);
@@ -75,13 +63,13 @@ class MySqlDB {
    }
 
    /**
-    * Update query. Be sure to first call the "where" method.
-    *
-    * @param string $tableName The name of the database table to work with.
-    * @param array $tableData Array of data to update the desired row.
-    * @return boolean
-    */
-   public function update($tableName, $tableData) 
+* Update query. Be sure to first call the "where" method.
+*
+* @param string $tableName The name of the database table to work with.
+* @param array $tableData Array of data to update the desired row.
+* @return boolean
+*/
+   public function update($tableName, $tableData)
    {
       $this->_query = "UPDATE $tableName SET ";
 
@@ -93,11 +81,11 @@ class MySqlDB {
    }
 
    /**
-    * Delete query. Call the "where" method first.
-    *
-    * @param string $tableName The name of the database table to work with.
-    * @return boolean Indicates success. 0 or 1.
-    */
+* Delete query. Call the "where" method first.
+*
+* @param string $tableName The name of the database table to work with.
+* @return boolean Indicates success. 0 or 1.
+*/
    public function delete($tableName) {
       $this->_query = "DELETE FROM $tableName";
 
@@ -109,26 +97,26 @@ class MySqlDB {
    }
 
    /**
-    * This method allows you to specify a WHERE statement for SQL queries.
-    *
-    * @param string $whereProp A string for the name of the database field to update
-    * @param mixed $whereValue The value for the field.
-    */
-   public function where($whereProp, $whereValue) 
+* This method allows you to specify a WHERE statement for SQL queries.
+*
+* @param string $whereProp A string for the name of the database field to update
+* @param mixed $whereValue The value for the field.
+*/
+   public function where($whereProp, $whereValue)
    {
       $this->_where[$whereProp] = $whereValue;
    }
 
    /**
-    * This method is needed for prepared statements. They require
-    * the data type of the field to be bound with "i" s", etc.
-    * This function takes the input, determines what type it is,
-    * and then updates the param_type.
-    *
-    * @param mixed $item Input to determine the type.
-    * @return string The joined parameter types.
-    */
-   protected function _determineType($item) 
+* This method is needed for prepared statements. They require
+* the data type of the field to be bound with "i" s", etc.
+* This function takes the input, determines what type it is,
+* and then updates the param_type.
+*
+* @param mixed $item Input to determine the type.
+* @return string The joined parameter types.
+*/
+   protected function _determineType($item)
    {
       switch (gettype($item)) {
          case 'string':
@@ -150,15 +138,15 @@ class MySqlDB {
    }
 
    /**
-    * Abstraction method that will compile the WHERE statement,
-    * any passed update data, and the desired rows.
-    * It then builds the SQL query.
-    *
-    * @param int $numRows The number of rows total to return.
-    * @param array $tableData Should contain an array of data for updating the database.
-    * @return object Returns the $stmt object.
-    */
-   protected function _buildQuery($numRows = NULL, $tableData = false) 
+* Abstraction method that will compile the WHERE statement,
+* any passed update data, and the desired rows.
+* It then builds the SQL query.
+*
+* @param int $numRows The number of rows total to return.
+* @param array $tableData Should contain an array of data for updating the database.
+* @return object Returns the $stmt object.
+*/
+   protected function _buildQuery($numRows = NULL, $tableData = false)
    {
       $hasTableData = null;
       if (gettype($tableData) === 'array') {
@@ -175,22 +163,22 @@ class MySqlDB {
          // and create the SQL query, accordingly.
          if ($hasTableData) {
             $i = 1;
-				$pos = strpos($this->_query, 'UPDATE');
-				if ( $pos !== false) {
-					foreach ($tableData as $prop => $value) {
-						// determines what data type the item is, for binding purposes.
-						$this->_paramTypeList .= $this->_determineType($value);
+$pos = strpos($this->_query, 'UPDATE');
+if ( $pos !== false) {
+foreach ($tableData as $prop => $value) {
+// determines what data type the item is, for binding purposes.
+$this->_paramTypeList .= $this->_determineType($value);
 
-						// prepares the reset of the SQL query.
-						if ($i === count($tableData)) {
-							$this->_query .= $prop . " = ? WHERE " . $where_prop . "= " . $where_value;
-						} else {
-							$this->_query .= $prop . ' = ?, ';
-						}
+// prepares the reset of the SQL query.
+if ($i === count($tableData)) {
+$this->_query .= $prop . " = ? WHERE " . $where_prop . "= " . $where_value;
+} else {
+$this->_query .= $prop . ' = ?, ';
+}
 
-						$i++;
-					}
-				}
+$i++;
+}
+}
          } else {
             // no table data was passed. Might be SELECT statement.
             $this->_paramTypeList = $this->_determineType($where_value);
@@ -248,13 +236,13 @@ class MySqlDB {
    }
 
    /**
-    * This helper method takes care of prepared statements' "bind_result method
-    * , when the number of variables to pass is unknown.
-    *
-    * @param object $stmt Equal to the prepared statement object.
-    * @return array The results of the SQL fetch.
-    */
-   protected function _dynamicBindResults($stmt) 
+* This helper method takes care of prepared statements' "bind_result method
+* , when the number of variables to pass is unknown.
+*
+* @param object $stmt Equal to the prepared statement object.
+* @return array The results of the SQL fetch.
+*/
+   protected function _dynamicBindResults($stmt)
    {
       $parameters = array();
       $results = array();
@@ -279,10 +267,10 @@ class MySqlDB {
 
 
    /**
-   * Method attempts to prepare the SQL query
-   * and throws an error if there was a problem.
-   */
-   protected function _prepareQuery() 
+* Method attempts to prepare the SQL query
+* and throws an error if there was a problem.
+*/
+   protected function _prepareQuery()
    {
       if (!$stmt = $this->_mysql->prepare($this->_query)) {
          trigger_error("Problem preparing query", E_USER_ERROR);
@@ -291,9 +279,9 @@ class MySqlDB {
    }
 
 
-   public function __destruct() 
+   public function __destruct()
    {
-		$this->_mysql->close();
+$this->_mysql->close();
    }
 
 }

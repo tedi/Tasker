@@ -1,5 +1,8 @@
 <?php
-include "header.php"; 
+include "header.php";
+
+$priors = $admin->get_all_priority();
+$stats = $admin->get_all_status();
 ?>
 
 <div id="dashboard">
@@ -10,10 +13,27 @@ include "header.php";
 			<p id="leftform"><label>Project name</label><input class="required inpt" type="text" name="task" value="" /></p>
 	
 			<p id="rightform"><label>Project priority</label>
-				<select name="task_priority" id="subject" class="select">
-					<option value="0">Low</option>
-					<option value="1">Normal</option>
-					<option value="2">High</option> </select></p>
+				<select name="priority">
+                                    <option selected="selected" value="NULL">Choose Priority Level</option>
+                                    <option value="NULL"></option>
+                                    <?php
+                                        foreach($priors as $prior){
+                                            echo "<option value=".$prior['priority_description'].">".$prior['priority_description']."</otion>";
+                                        }
+                                    ?>
+                                </select>
+                        </p>
+                        <p id="rightform"><label>Project status</label>
+				<select name="status">
+                                    <option selected="selected" value="NULL">Choose Status</option>
+                                    <option value="NULL"></option>
+                                    <?php
+                                        foreach($stats as $stat){
+                                            echo "<option value=".$stat['status_description'].">".$stat['status_description']."</otion>";
+                                        }
+                                    ?>
+                                </select>
+                        </p>
 					
 					
 			<p id="rightform"><label>Assign to</label>
@@ -23,11 +43,6 @@ include "header.php";
 					<option value="user2id">User2</option>
 		</select> </p>
 		
-		<p id="rightform"><label>Project category</label>
-				<select name="project_category" id="subject" class="select">
-					<option value="cat1">Category 1</option>
-					<option value="cat2">Second category</option>
-					<option value="cat3">Other category</option> </select></p>
 		
 		
 			<p id="leftform"><label>Project description</label><textarea rows="40" class="required inpt" type="text" value="" /></textarea></p>

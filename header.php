@@ -1,5 +1,11 @@
 <?php
 //start session
+
+include "classes/MySqlDb.php";
+include "classes/Admin.php";
+include "classes/user.php";
+$admin = new Admin();
+$user = new User();
 ?> 
 <!DOCTYPE html>
 <html lang="en">
